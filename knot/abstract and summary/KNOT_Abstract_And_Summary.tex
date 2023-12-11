@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+%============= Imports =============
+\usepackage{physics}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[dvips,letterpaper,margin=1.1in,bottom=0.7in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{charter}
+\usepackage{tabstackengine}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{natbib}
+\bibliographystyle{apa-good}
+%============= Page style =============
+\pagestyle{fancy}
+\newcommand{\CourseDef}{PHY424} %Course
+\newcommand{\TitleDef}{Statistics and dynamics of vertically vibrated granular chains} %Title
+\newcommand{\NumberDef}{1006154625}
+\newcommand{\AuthorDef}{Lucas Prates} %Author (Name)
+\rhead{\AuthorDef}
+\chead{\TitleDef}
+\lhead{\CourseDef}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+%============= Matrix Commands =============
+\setstackEOL{;}% row separator
+\setstackTAB{,}% column separator
+\setstacktabbedgap{2ex}% inter-column gap
+\setstackgap{L}{1.0\normalbaselineskip}% inter-row baselineskip
+\let\bmatrix\bracketMatrixstack
+\let\pmatrix\parenMatrixstack
+\let\dmatrix\vertMatrixstack
+\newcommand{\declarecommand}[1]{\providecommand{#1}{}\renewcommand{#1}}
+%============= Other Commands =============
+\declarecommand{\R}{\mathbb{R}}
+\declarecommand{\Q}{\mathbb{Q}}
+\declarecommand{\Z}{\mathbb{Z}}
+\declarecommand{\N}{\mathbb{N}}
+\declarecommand{\C}{\mathbb{C}}
+\declarecommand{\emptyset}{\varnothing}
+\newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+%%[label=(alph*)]
+%============= Title Config =============
+%\title{\CourseDef\space\TitleDef}
+%\author{\AuthorDef \\ \NumberDef}
+\begin{document}
+\thispagestyle{plain}
+{\noindent\Huge\bf  \\[0.5\baselineskip] {\fontfamily{cmr}\selectfont  \TitleDef}         }\\[2\baselineskip] % Title
+{ {\bf \fontfamily{cmr}\selectfont \CourseDef}\\ {\textit{\fontfamily{cmr}\selectfont     \today}}}\hspace{150pt}    {\large \textsc{\AuthorDef}} % Author name
+\\[1.4\baselineskip]
+\vspace{-15pt}
+
+%\begin{figure}[h]%
+%    \centering
+%    \subfloat{{\includegraphics[scale=0.56]{Kp_Upstream_figure.png} }}%
+%    \qquad
+%    \subfloat{{\includegraphics[scale=0.56]{Kp_Downstream_figure.png} }}%
+%    \caption{Time-averaged $K_{\rho}^U$ (a) and $K_{\rho}^D$ (b) for each simulation. The time average was taken        on the last $54t_0$ ($\sim20$ minutes of simulation time) of the simulation.}%
+%    \label{fig:diffus}%
+%\end{figure}
+%============= Start File =============
+
+\begin{abstract}
+    This experiment ventured to study the statistics and dynamics of vertically vibrated
+    granular chains and consisted of two phases. The first phase studied the opening times
+    of a trefoil knot initially located in the center of the chain. The second phase studied the 
+    equilibrium radius of gyration of the chain after the dissipation of transient motion.\\
+
+    In the first phase, I collected 30-60 opening times for each chain length $40\leq N \leq 140$, 
+    with intervals of $20$ beads. The data results are in tables 1-12 (pg 7-20), but note 
+    that tables 1, 2, and 5 have been discarded due to an inconsistent shaker plate amplitude 
+    (pg 21). After ommiting the long tail end times, I found that the mean opening times for 
+    each chain length $N$ were given by $\tau_{\text{avg}} \propto (N-N_0)^{\delta}$ with 
+    $\delta = 2.01 \pm 0.07$ with $\chi_{\text{red}}^2=1.04$ and CDF = 38.4\% (pg 25-28). I also 
+    plotted the empirical survival probability for each chain length data set (pg 23) and verified 
+    that they come from the same distribution using the Komogorov Smirnov test (pg 44).\\
+
+    For the second phase, I searched for a relationship between equilibrium radius of gyration 
+    and $N$. I recorded the motion of the vibrating ball chains for $40\leq N \leq 140$ with a 
+    20 bead interval and also for $N=50, 55$ (pg 32-34 and 37-38) and computed the radius of 
+    gyration at each 2 second interval. For each trial, I plotted 
+    the radius of gyration for the last 60 seconds of motion, and plotted the distributions of 
+    these radii of gyration, but trials 2, 4, and 8 were discarded (pg 40-41). At equilibrium, the chains tended to form spirals. I found 
+    that there were 3 regimes of equilibrium motion (pg 42-43)
+    
+    \begin{itemize}
+        \item $N<60$: spirals were unable to form
+        \item $60<N<80$: loose spiral formation
+        \item $80<N<140$: area filling spiral formation
+    \end{itemize}
+
+    Due to the complex nature of the equilibrium radius of gyration vs $N$ relationship, more data 
+    is required in order find a best fit curve for each regime.
+\end{abstract}
+\end{document}

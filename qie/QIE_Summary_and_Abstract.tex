@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+%============= Imports =============
+\usepackage{physics}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[dvips,letterpaper,margin=1.1in,bottom=0.7in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{charter}
+\usepackage{tabstackengine}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+%============= Page style =============
+\pagestyle{fancy}
+\newcommand{\CourseDef}{PHY424} %Course
+\newcommand{\TitleDef}{Violation of Bell's inequality in the polarizations of down converted photon pairs} %Title
+\newcommand{\NumberDef}{1006154625}
+\newcommand{\AuthorDef}{Lucas Prates} %Author (Name)
+\rhead{\AuthorDef}
+\chead{\TitleDef}
+\lhead{\CourseDef}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+%============= Matrix Commands =============
+\setstackEOL{;}% row separator
+\setstackTAB{,}% column separator
+\setstacktabbedgap{2ex}% inter-column gap
+\setstackgap{L}{1.0\normalbaselineskip}% inter-row baselineskip
+\let\bmatrix\bracketMatrixstack
+\let\pmatrix\parenMatrixstack
+\let\dmatrix\vertMatrixstack
+\newcommand{\declarecommand}[1]{\providecommand{#1}{}\renewcommand{#1}}
+%============= Other Commands =============
+\declarecommand{\R}{\mathbb{R}}
+\declarecommand{\Q}{\mathbb{Q}}
+\declarecommand{\Z}{\mathbb{Z}}
+\declarecommand{\N}{\mathbb{N}}
+\declarecommand{\C}{\mathbb{C}}
+\declarecommand{\emptyset}{\varnothing}
+\newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+%%[label=(alph*)]
+%============= Title Config =============
+%\title{\CourseDef\space\TitleDef}
+%\author{\AuthorDef \\ \NumberDef}
+\begin{document}
+\thispagestyle{plain}
+{\noindent\Huge\bf  \\[0.5\baselineskip] {\fontfamily{cmr}\selectfont  \TitleDef}         }\\[2\baselineskip] % Title
+{ {\bf \fontfamily{cmr}\selectfont \CourseDef}\\ {\textit{\fontfamily{cmr}\selectfont     \today}}}\hspace{150pt}    {\large \textsc{\AuthorDef}} % Author name
+\\[1.4\baselineskip]
+\vspace{-15pt}
+
+%\begin{figure}[h]%
+%    \centering
+%    \subfloat{{\includegraphics[scale=0.56]{Kp_Upstream_figure.png} }}%
+%    \qquad
+%    \subfloat{{\includegraphics[scale=0.56]{Kp_Downstream_figure.png} }}%
+%    \caption{Time-averaged $K_{\rho}^U$ (a) and $K_{\rho}^D$ (b) for each simulation. The time average was taken        on the last $54t_0$ ($\sim20$ minutes of simulation time) of the simulation.}%
+%    \label{fig:diffus}%
+%\end{figure}
+%============= Start File =============
+
+\center{\textbf{Abstract}}\\
+This experiment attempts and fails to show the violation of Bell's inequality (p.3) in 
+the polarizations of down converted photon pairs (p.1-2). The experiment makes use of a 
+laser to produce photons, which when incident on a BBO crystal (p. 4) produce photon 
+pairs with the same polarization in a process called spontaneous down conversion.
+
+The coincidence window $\tau$ was determined using a linear fit between the product 
+of the two detector's single photon counts and the number of raw coincidences (p. 6). 
+Due to faulty equipment (p. 8, 12) as well as experimenting with replacing BNC cables, 
+APD detectors, and fibre optic cables to try and maximize the amount of detected light (p. 20, 25-28)
+resulted in throwing away several data sets (p. 7, 9, 13, 21) to ensure the value of $\tau$ 
+was still accurate for my equipment. The final analysis (p. 30) resulted in $\tau =35 \pm 4$ ns
+and $\chi^2_{red}=1.3$.\\
+
+After aligning the collectors (p. 10, 30), the goal was preparing an incident beam with polarization $\theta=45^\circ$ from vertical 
+and relative phase $\phi=0^{\circ}$ (p. 14-19).
+To measure these values both the starred equations on p. 2 and a least squares fit with the 
+equation on p. 14 were used. This ultimately resulted in $\theta=47^{\circ}\pm 3^{\circ}$ (p. 31), but any attempt to measure 
+$\phi$ was a failure. This is likely due to the massive fluctuations in the corrected coincidences (p. 32).\\
+
+The result was a value of $S=1.1\pm 0.9$ (p. 32), whose calculation is detailed on p. 34. Despite satisfying Bell's inequality, 
+this is not evidence for a local hidden variable theory. While we minimized ambient light in the room,
+verified the coincidence window (p. 24), and spent several hours troubleshooting equipment to ensure accuracy (p. 24-29), 
+we did not explore the effect reorienting the crystal had on the raw coincidence counts.
+Thus, there remains a possibility that the proportionally large discrepency between raw and corrected coincidences (p. 32) was 
+caused by the failure of incident photons to undergo spontaneous down conversion due to the misorientation of the crystal.
+% This would explain both the very small number of raw coincidences, and the large proportion 
+% of photons that were removed in the statistical correction of the coincidence window.
+\end{document}
